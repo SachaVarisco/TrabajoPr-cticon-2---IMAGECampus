@@ -29,19 +29,19 @@ public class Movement : MonoBehaviour
         Vector3 pos = transform.position;
         if (Input.GetKey(keyUp))
         {
-            pos.y += speed;
+            pos.y += speed * Time.deltaTime;
         }
         else if (Input.GetKey(keyDown))
         {
-            pos.y -= speed;
+            pos.y -= speed * Time.deltaTime;
         }
         else if (Input.GetKey(keyRight))
         {
-            pos.x += speed;
+            pos.x += speed * Time.deltaTime;
         }
         else if (Input.GetKey(keyLeft))
         {
-            pos.x -= speed;
+            pos.x -= speed * Time.deltaTime;
         }
         transform.position = pos;
         if (Input.GetKeyDown(keyRotLeft))
@@ -59,7 +59,9 @@ public class Movement : MonoBehaviour
         }
     }
 
-    public void SetSpeed(float newSpeed){
+    public void SetSpeed(float newSpeed)
+    {
+        speed = newSpeed;
         if (newSpeed < 1.5f)
         {
             speed = newSpeed;
