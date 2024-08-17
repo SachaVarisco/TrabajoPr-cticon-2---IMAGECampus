@@ -66,6 +66,7 @@ public class UiMainMenu : MonoBehaviour
         creditsButton.onClick.RemoveAllListeners();
         backCredButton.onClick.RemoveAllListeners();
         backSetButton.onClick.RemoveAllListeners();
+        
     }
     //Pause Functions
     private void OnPlayButtonClicked(){
