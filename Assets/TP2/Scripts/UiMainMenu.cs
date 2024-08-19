@@ -49,7 +49,7 @@ public class UiMainMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!pausePanel.activeSelf)
+            if (!pausePanel.activeSelf && !creditsPanel.activeSelf && !settingsPanel.activeSelf)
             {
                 pausePanel.SetActive(true);
             }else{
@@ -66,6 +66,8 @@ public class UiMainMenu : MonoBehaviour
         creditsButton.onClick.RemoveAllListeners();
         backCredButton.onClick.RemoveAllListeners();
         backSetButton.onClick.RemoveAllListeners();
+        speedSlider1.onValueChanged.RemoveAllListeners();
+        speedSlider2.onValueChanged.RemoveAllListeners();
         
     }
     //Pause Functions
