@@ -4903,7 +4903,6 @@ GameObject:
   - component: {fileID: 1982002400}
   - component: {fileID: 1982002399}
   - component: {fileID: 1982002398}
-  - component: {fileID: 1982002397}
   m_Layer: 5
   m_Name: CanvasPause
   m_TagString: Untagged
@@ -4911,18 +4910,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1982002397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982002396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee636b3d7d2960945bf58e589ae41305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1982002398
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIPanelPause : MonoBehaviour
@@ -32,10 +33,16 @@ public class UIPanelPause : MonoBehaviour
             if (!pausePanel.activeSelf && !creditsPanel.activeSelf && !settingsPanel.activeSelf)
             {
                 pausePanel.SetActive(true);
+                Time.timeScale = 0f;
             }
             else
             {
-                pausePanel.SetActive(false);
+                if (pausePanel.activeInHierarchy)
+                {
+                    pausePanel.SetActive(false);
+                    Time.timeScale = 1f;
+                }
+
             }
         }
     }
@@ -50,18 +57,16 @@ public class UIPanelPause : MonoBehaviour
 
     private void OnPlayButtonClicked()
     {
-       pausePanel.SetActive(false);
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f;
     }
     private void OnExitButtonClicked()
     {
-        Application.Quit();
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        SceneManager.LoadScene("Menu");
     }
     private void OnCredButtonClicked()
     {
-        gameObject.SetActive(false);
+        pausePanel.SetActive(false);
         creditsPanel.SetActive(true);
     }
     private void OnSetButtonClicked()
